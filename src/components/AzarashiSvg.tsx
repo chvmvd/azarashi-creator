@@ -10,7 +10,8 @@ export default function AzarashiSvg(props: {
   return (
     <>
       <svg
-        width="400"
+        width="100%"
+        style={{ maxWidth: "600px" }}
         viewBox="0 0 732 497"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

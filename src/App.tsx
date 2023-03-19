@@ -15,7 +15,7 @@ function App(): JSX.Element {
   const [bodyColor, setBodyColor] = useState("#ffffff");
   const [eyeColor, setEyeColor] = useState("#000000");
   const [cheekColor, setCheekColor] = useState("#FBBABA");
-  const [mouseColor, setMouseColor] = useState("#DCDCDC");
+  const [mouthColor, setMouthColor] = useState("#DCDCDC");
   type BeardNumber = 2 | 3;
   const [beardNumber, setBeardNumber] = useState<BeardNumber>(2);
   return (
@@ -60,14 +60,13 @@ function App(): JSX.Element {
           </Stack>
           <Stack>
             <Typography variant="h6" component="h2">
-              Mouse Color
+              Mouth Color
             </Typography>
-
             <input
               type="color"
-              value={mouseColor}
+              value={mouthColor}
               onChange={(e) => {
-                setMouseColor(e.target.value);
+                setMouthColor(e.target.value);
               }}
             />
           </Stack>
@@ -89,7 +88,7 @@ function App(): JSX.Element {
         bodyColor={bodyColor}
         eyeColor={eyeColor}
         cheekColor={cheekColor}
-        mouseColor={mouseColor}
+        mouseColor={mouthColor}
         beardNumber={beardNumber}
       />
     </>

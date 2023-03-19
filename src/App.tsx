@@ -3,7 +3,6 @@ import AzarashiSvg from "./components/AzarashiSvg";
 import {
   Paper,
   Stack,
-  Typography,
   FormControl,
   FormLabel,
   RadioGroup,
@@ -21,11 +20,9 @@ function App(): JSX.Element {
   return (
     <>
       <Paper sx={{ p: 2 }}>
-        <Stack spacing={1}>
-          <Stack>
-            <Typography variant="h6" component="h2">
-              Body Color
-            </Typography>
+        <Stack spacing={2}>
+          <FormControl>
+            <FormLabel>Body Color</FormLabel>
             <input
               type="color"
               value={bodyColor}
@@ -33,11 +30,9 @@ function App(): JSX.Element {
                 setBodyColor(e.target.value);
               }}
             />
-          </Stack>
-          <Stack>
-            <Typography variant="h6" component="h2">
-              Eye Color
-            </Typography>
+          </FormControl>
+          <FormControl>
+            <FormLabel>Eye Color</FormLabel>
             <input
               type="color"
               value={eyeColor}
@@ -45,11 +40,9 @@ function App(): JSX.Element {
                 setEyeColor(e.target.value);
               }}
             />
-          </Stack>
-          <Stack>
-            <Typography variant="h6" component="h2">
-              Cheek Color
-            </Typography>
+          </FormControl>
+          <FormControl>
+            <FormLabel>Cheek Color</FormLabel>
             <input
               type="color"
               value={cheekColor}
@@ -57,11 +50,9 @@ function App(): JSX.Element {
                 setCheekColor(e.target.value);
               }}
             />
-          </Stack>
-          <Stack>
-            <Typography variant="h6" component="h2">
-              Mouth Color
-            </Typography>
+          </FormControl>
+          <FormControl>
+            <FormLabel>Mouth Color</FormLabel>
             <input
               type="color"
               value={mouthColor}
@@ -69,9 +60,9 @@ function App(): JSX.Element {
                 setMouthColor(e.target.value);
               }}
             />
-          </Stack>
+          </FormControl>
           <FormControl>
-            <FormLabel>the number of beard</FormLabel>
+            <FormLabel>The Number of Beard</FormLabel>
             <RadioGroup
               value={beardNumber}
               onChange={(e) => {

@@ -21,15 +21,15 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ReactDOMServer from "react-dom/server";
-import logo from "/logo.svg";
-import sample1 from "/sample1.svg";
-import sample2 from "/sample2.svg";
-import sample3 from "/sample3.svg";
-import sample4 from "/sample4.svg";
-import sample5 from "/sample5.svg";
-import sample6 from "/sample6.svg";
-import sample7 from "/sample7.svg";
-import sample8 from "/sample8.svg";
+import logo from "./../public/logo.svg";
+import sample1 from "./../public/sample1.svg";
+import sample2 from "./../public/sample2.svg";
+import sample3 from "./../public/sample3.svg";
+import sample4 from "./../public/sample4.svg";
+import sample5 from "./../public/sample5.svg";
+import sample6 from "./../public/sample6.svg";
+import sample7 from "./../public/sample7.svg";
+import sample8 from "./../public/sample8.svg";
 
 function calcBreakPoint(): "xs" | "sm" | "md" | "lg" | "xl" {
   if (useMediaQuery(useTheme().breakpoints.down("sm"))) {

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import AzarashiSvg from "./components/AzarashiSvg";
 import {
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
   Grid,
   Paper,
   Stack,
@@ -10,6 +14,7 @@ import {
   FormControlLabel,
   Radio,
 } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 function App(): JSX.Element {
   const [bodyColor, setBodyColor] = useState("#ffffff");
@@ -20,6 +25,23 @@ function App(): JSX.Element {
   const [beardNumber, setBeardNumber] = useState<BeardNumber>(2);
   return (
     <>
+      <AppBar>
+        <Toolbar>
+          <Stack spacing={2} direction="row" flexGrow={1}>
+            <img src="/logo.svg" alt="logo" height="30px" />
+            <Typography variant="h5" component="div">
+              Azarashi Creator
+            </Typography>
+          </Stack>
+          <IconButton
+            color="inherit"
+            href="https://github.com/chvmvd/azarashi-creator"
+          >
+            <GitHubIcon fontSize="large" />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Toolbar />
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
           <Paper sx={{ p: 2 }}>

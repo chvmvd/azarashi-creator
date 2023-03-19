@@ -5,17 +5,36 @@ import {
   Toolbar,
   Typography,
   IconButton,
-  Box,
+  Stack,
   Grid,
   Paper,
-  Stack,
   FormControl,
   FormLabel,
   RadioGroup,
   FormControlLabel,
   Radio,
+  ImageList,
+  ListSubheader,
+  ImageListItem,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import ReactDOMServer from "react-dom/server";
+
+function calcBreakPoint(): "xs" | "sm" | "md" | "lg" | "xl" {
+  if (useMediaQuery(useTheme().breakpoints.down("sm"))) {
+    return "xs";
+  } else if (useMediaQuery(useTheme().breakpoints.down("md"))) {
+    return "sm";
+  } else if (useMediaQuery(useTheme().breakpoints.down("lg"))) {
+    return "md";
+  } else if (useMediaQuery(useTheme().breakpoints.down("xl"))) {
+    return "lg";
+  } else {
+    return "xl";
+  }
+}
 
 function App(): JSX.Element {
   const [bodyColor, setBodyColor] = useState("#ffffff");
@@ -45,7 +64,7 @@ function App(): JSX.Element {
         </Toolbar>
       </AppBar>
       <Toolbar />
-      <Box m={2}>
+      <Stack m={2} spacing={2}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={4}>
             <Paper sx={{ p: 2 }}>
@@ -93,6 +112,7 @@ function App(): JSX.Element {
                 <FormControl>
                   <FormLabel>The Number of Beard</FormLabel>
                   <RadioGroup
+                    row
                     value={beardNumber}
                     onChange={(e) => {
                       setBeardNumber(Number(e.target.value) as BeardNumber);
@@ -105,6 +125,7 @@ function App(): JSX.Element {
                 <FormControl>
                   <FormLabel>Hat Type</FormLabel>
                   <RadioGroup
+                    row
                     value={hatType}
                     onChange={(e) => {
                       setHatType(e.target.value as HatType);
@@ -137,18 +158,76 @@ function App(): JSX.Element {
           </Grid>
           <Grid item xs={12} md={8}>
             <Paper sx={{ p: 2 }}>
-              <AzarashiSvg
-                bodyColor={bodyColor}
-                eyeColor={eyeColor}
-                cheekColor={cheekColor}
-                mouseColor={mouthColor}
-                beardNumber={beardNumber}
-                hatType={hatType}
+              <img
+                src={`data:image/svg+xml;utf8,${encodeURIComponent(
+                  ReactDOMServer.renderToString(
+                    <AzarashiSvg
+                      bodyColor={bodyColor}
+                      eyeColor={eyeColor}
+                      cheekColor={cheekColor}
+                      mouseColor={mouthColor}
+                      beardNumber={beardNumber}
+                      hatType={hatType}
+                    />
+                  )
+                )}`}
+                alt="azarashi image"
               />
             </Paper>
           </Grid>
         </Grid>
-      </Box>
+        <Paper sx={{ p: 2 }}>
+          <ImageList
+            cols={
+              calcBreakPoint() === "xs"
+                ? 2
+                : calcBreakPoint() === "sm"
+                ? 3
+                : calcBreakPoint() === "md"
+                ? 4
+                : 5
+            }
+          >
+            <ImageListItem
+              cols={
+                calcBreakPoint() === "xs"
+                  ? 2
+                  : calcBreakPoint() === "sm"
+                  ? 3
+                  : calcBreakPoint() === "md"
+                  ? 4
+                  : 5
+              }
+            >
+              <ListSubheader component="div">Sample</ListSubheader>
+            </ImageListItem>
+            <ImageListItem>
+              <img src="/sample1.svg" alt="sample1" />
+            </ImageListItem>
+            <ImageListItem>
+              <img src="/sample2.svg" alt="sample2" />
+            </ImageListItem>
+            <ImageListItem>
+              <img src="/sample3.svg" alt="sample3" />
+            </ImageListItem>
+            <ImageListItem>
+              <img src="/sample4.svg" alt="sample4" />
+            </ImageListItem>
+            <ImageListItem>
+              <img src="/sample5.svg" alt="sample5" />
+            </ImageListItem>
+            <ImageListItem>
+              <img src="/sample6.svg" alt="sample6" />
+            </ImageListItem>
+            <ImageListItem>
+              <img src="/sample7.svg" alt="sample7" />
+            </ImageListItem>
+            <ImageListItem>
+              <img src="/sample8.svg" alt="sample8" />
+            </ImageListItem>
+          </ImageList>
+        </Paper>
+      </Stack>
     </>
   );
 }

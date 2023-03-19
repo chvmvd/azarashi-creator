@@ -21,6 +21,15 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ReactDOMServer from "react-dom/server";
+import logo from "/logo.svg";
+import sample1 from "/sample1.svg";
+import sample2 from "/sample2.svg";
+import sample3 from "/sample3.svg";
+import sample4 from "/sample4.svg";
+import sample5 from "/sample5.svg";
+import sample6 from "/sample6.svg";
+import sample7 from "/sample7.svg";
+import sample8 from "/sample8.svg";
 
 function calcBreakPoint(): "xs" | "sm" | "md" | "lg" | "xl" {
   if (useMediaQuery(useTheme().breakpoints.down("sm"))) {
@@ -50,7 +59,7 @@ function App(): JSX.Element {
       <AppBar>
         <Toolbar>
           <Stack spacing={2} direction="row" flexGrow={1}>
-            <img src="/logo.svg" alt="logo" height="30px" />
+            <img src={logo} alt="logo" height="30px" />
             <Typography variant="h5" component="div">
               Azarashi Creator
             </Typography>
@@ -202,28 +211,28 @@ function App(): JSX.Element {
               <ListSubheader component="div">Sample</ListSubheader>
             </ImageListItem>
             <ImageListItem>
-              <img src="/sample1.svg" alt="sample1" />
+              <img src={sample1} alt="sample1" />
             </ImageListItem>
             <ImageListItem>
-              <img src="/sample2.svg" alt="sample2" />
+              <img src={sample2} alt="sample2" />
             </ImageListItem>
             <ImageListItem>
-              <img src="/sample3.svg" alt="sample3" />
+              <img src={sample3} alt="sample3" />
             </ImageListItem>
             <ImageListItem>
-              <img src="/sample4.svg" alt="sample4" />
+              <img src={sample4} alt="sample4" />
             </ImageListItem>
             <ImageListItem>
-              <img src="/sample5.svg" alt="sample5" />
+              <img src={sample5} alt="sample5" />
             </ImageListItem>
             <ImageListItem>
-              <img src="/sample6.svg" alt="sample6" />
+              <img src={sample6} alt="sample6" />
             </ImageListItem>
             <ImageListItem>
-              <img src="/sample7.svg" alt="sample7" />
+              <img src={sample7} alt="sample7" />
             </ImageListItem>
             <ImageListItem>
-              <img src="/sample8.svg" alt="sample8" />
+              <img src={sample8} alt="sample8" />
             </ImageListItem>
           </ImageList>
         </Paper>

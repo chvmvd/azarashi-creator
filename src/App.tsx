@@ -5,6 +5,7 @@ import {
   Toolbar,
   Typography,
   IconButton,
+  Box,
   Grid,
   Paper,
   Stack,
@@ -44,108 +45,110 @@ function App(): JSX.Element {
         </Toolbar>
       </AppBar>
       <Toolbar />
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 2 }}>
-            <Stack spacing={2}>
-              <FormControl>
-                <FormLabel>Body Color</FormLabel>
-                <input
-                  type="color"
-                  value={bodyColor}
-                  onChange={(e) => {
-                    setBodyColor(e.target.value);
-                  }}
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel>Eye Color</FormLabel>
-                <input
-                  type="color"
-                  value={eyeColor}
-                  onChange={(e) => {
-                    setEyeColor(e.target.value);
-                  }}
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel>Cheek Color</FormLabel>
-                <input
-                  type="color"
-                  value={cheekColor}
-                  onChange={(e) => {
-                    setCheekColor(e.target.value);
-                  }}
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel>Mouth Color</FormLabel>
-                <input
-                  type="color"
-                  value={mouthColor}
-                  onChange={(e) => {
-                    setMouthColor(e.target.value);
-                  }}
-                />
-              </FormControl>
-              <FormControl>
-                <FormLabel>The Number of Beard</FormLabel>
-                <RadioGroup
-                  value={beardNumber}
-                  onChange={(e) => {
-                    setBeardNumber(Number(e.target.value) as BeardNumber);
-                  }}
-                >
-                  <FormControlLabel value={2} control={<Radio />} label="2" />
-                  <FormControlLabel value={3} control={<Radio />} label="3" />
-                </RadioGroup>
-              </FormControl>
-              <FormControl>
-                <FormLabel>Hat Type</FormLabel>
-                <RadioGroup
-                  value={hatType}
-                  onChange={(e) => {
-                    setHatType(e.target.value as HatType);
-                  }}
-                >
-                  <FormControlLabel
-                    value="none"
-                    control={<Radio />}
-                    label="None"
+      <Box m={2}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={4}>
+            <Paper sx={{ p: 2 }}>
+              <Stack spacing={2}>
+                <FormControl>
+                  <FormLabel>Body Color</FormLabel>
+                  <input
+                    type="color"
+                    value={bodyColor}
+                    onChange={(e) => {
+                      setBodyColor(e.target.value);
+                    }}
                   />
-                  <FormControlLabel
-                    value="normal"
-                    control={<Radio />}
-                    label="Normal"
+                </FormControl>
+                <FormControl>
+                  <FormLabel>Eye Color</FormLabel>
+                  <input
+                    type="color"
+                    value={eyeColor}
+                    onChange={(e) => {
+                      setEyeColor(e.target.value);
+                    }}
                   />
-                  <FormControlLabel
-                    value="santa"
-                    control={<Radio />}
-                    label="Santa"
+                </FormControl>
+                <FormControl>
+                  <FormLabel>Cheek Color</FormLabel>
+                  <input
+                    type="color"
+                    value={cheekColor}
+                    onChange={(e) => {
+                      setCheekColor(e.target.value);
+                    }}
                   />
-                  <FormControlLabel
-                    value="witch"
-                    control={<Radio />}
-                    label="Witch"
+                </FormControl>
+                <FormControl>
+                  <FormLabel>Mouth Color</FormLabel>
+                  <input
+                    type="color"
+                    value={mouthColor}
+                    onChange={(e) => {
+                      setMouthColor(e.target.value);
+                    }}
                   />
-                </RadioGroup>
-              </FormControl>
-            </Stack>
-          </Paper>
+                </FormControl>
+                <FormControl>
+                  <FormLabel>The Number of Beard</FormLabel>
+                  <RadioGroup
+                    value={beardNumber}
+                    onChange={(e) => {
+                      setBeardNumber(Number(e.target.value) as BeardNumber);
+                    }}
+                  >
+                    <FormControlLabel value={2} control={<Radio />} label="2" />
+                    <FormControlLabel value={3} control={<Radio />} label="3" />
+                  </RadioGroup>
+                </FormControl>
+                <FormControl>
+                  <FormLabel>Hat Type</FormLabel>
+                  <RadioGroup
+                    value={hatType}
+                    onChange={(e) => {
+                      setHatType(e.target.value as HatType);
+                    }}
+                  >
+                    <FormControlLabel
+                      value="none"
+                      control={<Radio />}
+                      label="None"
+                    />
+                    <FormControlLabel
+                      value="normal"
+                      control={<Radio />}
+                      label="Normal"
+                    />
+                    <FormControlLabel
+                      value="santa"
+                      control={<Radio />}
+                      label="Santa"
+                    />
+                    <FormControlLabel
+                      value="witch"
+                      control={<Radio />}
+                      label="Witch"
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </Stack>
+            </Paper>
+          </Grid>
+          <Grid item xs={12} md={8}>
+            <Paper sx={{ p: 2 }}>
+              <AzarashiSvg
+                bodyColor={bodyColor}
+                eyeColor={eyeColor}
+                cheekColor={cheekColor}
+                mouseColor={mouthColor}
+                beardNumber={beardNumber}
+                hatType={hatType}
+              />
+            </Paper>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={8}>
-          <Paper sx={{ p: 2 }}>
-            <AzarashiSvg
-              bodyColor={bodyColor}
-              eyeColor={eyeColor}
-              cheekColor={cheekColor}
-              mouseColor={mouthColor}
-              beardNumber={beardNumber}
-              hatType={hatType}
-            />
-          </Paper>
-        </Grid>
-      </Grid>
+      </Box>
     </>
   );
 }

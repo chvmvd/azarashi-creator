@@ -9,6 +9,7 @@ function App(): JSX.Element {
         mouseColor="#DCDCDC"
         cheekColor="#FBBABA"
         eyeColor="black"
+        beardNumber={2}
       />
     </>
   );

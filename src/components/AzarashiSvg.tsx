@@ -5,6 +5,7 @@ export default function AzarashiSvg(props: {
   mouseColor: string;
   cheekColor: string;
   eyeColor: string;
+  beardNumber: 2 | 3;
 }): JSX.Element {
   return (
     <>
@@ -74,32 +75,73 @@ export default function AzarashiSvg(props: {
             strokeWidth="4"
           />
         </g>
-        <g id="beard">
-          <path
-            id="beard_right1"
-            d="M64.5 261C44.5 261 13.5 261 1.5 274.5"
-            stroke="#1E1E1E"
-            strokeWidth="4"
-          />
-          <path
-            id="beard_right2"
-            d="M63.5 271C43.5 271 16 278 3 293"
-            stroke="#1E1E1E"
-            strokeWidth="4"
-          />
-          <path
-            id="beard_left1"
-            d="M297 282C317 282 349 298.5 357 316"
-            stroke="#1E1E1E"
-            strokeWidth="4"
-          />
-          <path
-            id="beard_left2"
-            d="M295 271C315 271 349.5 277 360.5 293"
-            stroke="#1E1E1E"
-            strokeWidth="4"
-          />
-        </g>
+        {props.beardNumber === 2 ? (
+          <g id="beard">
+            <path
+              id="beard_right1"
+              d="M64.5 261C44.5 261 13.5 261 1.5 274.5"
+              stroke="#1E1E1E"
+              strokeWidth="4"
+            />
+            <path
+              id="beard_right2"
+              d="M63.5 271C43.5 271 16 278 3 293"
+              stroke="#1E1E1E"
+              strokeWidth="4"
+            />
+            <path
+              id="beard_left1"
+              d="M297 282C317 282 349 298.5 357 316"
+              stroke="#1E1E1E"
+              strokeWidth="4"
+            />
+            <path
+              id="beard_left2"
+              d="M295 271C315 271 349.5 277 360.5 293"
+              stroke="#1E1E1E"
+              strokeWidth="4"
+            />
+          </g>
+        ) : (
+          <g id="beard">
+            <path
+              id="beard_right1"
+              d="M65 255C45 255 14 255 2 268.5"
+              stroke="#1E1E1E"
+              strokeWidth="4"
+            />
+            <path
+              id="beard_right2"
+              d="M63.5 265C43.5 265 16 272 3 287"
+              stroke="#1E1E1E"
+              strokeWidth="4"
+            />
+            <path
+              id="beard_right3"
+              d="M62 274C43.4876 274 18.0331 282.909 6 302"
+              stroke="#1E1E1E"
+              strokeWidth="4"
+            />
+            <path
+              id="beard_left1"
+              d="M294 266C314 266 348.5 272 359.5 288"
+              stroke="#1E1E1E"
+              strokeWidth="4"
+            />
+            <path
+              id="beard_left2"
+              d="M297 276C317 276 349 292.5 357 310"
+              stroke="#1E1E1E"
+              strokeWidth="4"
+            />
+            <path
+              id="beard_left3"
+              d="M298 284C316.667 284 346.533 304.382 354 326"
+              stroke="#1E1E1E"
+              strokeWidth="4"
+            />
+          </g>
+        )}
         <defs>
           <filter
             id="filter0_f_0_1"

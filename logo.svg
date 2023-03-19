@@ -41,30 +41,32 @@
       stroke-width="4"
     />
   </g>
-  <path
-    id="beard_left2"
-    d="M295 271C315 271 349.5 277 360.5 293"
-    stroke="#1E1E1E"
-    stroke-width="4"
-  />
-  <path
-    id="beard_right1"
-    d="M64.5 261C44.5 261 13.5 261 1.5 274.5"
-    stroke="#1E1E1E"
-    stroke-width="4"
-  />
-  <path
-    id="beard_right2"
-    d="M63.5 271C43.5 271 16 278 3 293"
-    stroke="#1E1E1E"
-    stroke-width="4"
-  />
-  <path
-    id="beard_left1"
-    d="M297 282C317 282 349 298.5 357 316"
-    stroke="#1E1E1E"
-    stroke-width="4"
-  />
+  <g id="beard">
+    <path
+      id="beard_right1"
+      d="M64.5 261C44.5 261 13.5 261 1.5 274.5"
+      stroke="#1E1E1E"
+      stroke-width="4"
+    />
+    <path
+      id="beard_right2"
+      d="M63.5 271C43.5 271 16 278 3 293"
+      stroke="#1E1E1E"
+      stroke-width="4"
+    />
+    <path
+      id="beard_left1"
+      d="M297 282C317 282 349 298.5 357 316"
+      stroke="#1E1E1E"
+      stroke-width="4"
+    />
+    <path
+      id="beard_left2"
+      d="M295 271C315 271 349.5 277 360.5 293"
+      stroke="#1E1E1E"
+      stroke-width="4"
+    />
+  </g>
   <path
     id="fin"
     d="M369.5 494.5C354.3 498.1 281.5 458.5 254 399.5L369.5 385.5C388 419 384.7 490.9 369.5 494.5Z"

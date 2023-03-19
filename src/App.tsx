@@ -1,12 +1,23 @@
 import React, { useState } from "react";
 import AzarashiSvg from "./components/AzarashiSvg";
-import { Paper, Stack, Typography } from "@mui/material";
+import {
+  Paper,
+  Stack,
+  Typography,
+  FormControl,
+  FormLabel,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+} from "@mui/material";
 
 function App(): JSX.Element {
   const [bodyColor, setBodyColor] = useState("#ffffff");
   const [eyeColor, setEyeColor] = useState("#000000");
   const [cheekColor, setCheekColor] = useState("#FBBABA");
   const [mouseColor, setMouseColor] = useState("#DCDCDC");
+  type BeardNumber = 2 | 3;
+  const [beardNumber, setBeardNumber] = useState<BeardNumber>(2);
   return (
     <>
       <Paper sx={{ p: 2 }}>
@@ -60,6 +71,18 @@ function App(): JSX.Element {
               }}
             />
           </Stack>
+          <FormControl>
+            <FormLabel>the number of beard</FormLabel>
+            <RadioGroup
+              value={beardNumber}
+              onChange={(e) => {
+                setBeardNumber(Number(e.target.value) as BeardNumber);
+              }}
+            >
+              <FormControlLabel value={2} control={<Radio />} label="2" />
+              <FormControlLabel value={3} control={<Radio />} label="3" />
+            </RadioGroup>
+          </FormControl>
         </Stack>
       </Paper>
       <AzarashiSvg
@@ -67,7 +90,7 @@ function App(): JSX.Element {
         eyeColor={eyeColor}
         cheekColor={cheekColor}
         mouseColor={mouseColor}
-        beardNumber={2}
+        beardNumber={beardNumber}
       />
     </>
   );

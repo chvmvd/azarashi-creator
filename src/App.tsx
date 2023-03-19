@@ -1,9 +1,15 @@
 import React from "react";
+import AzarashiSvg from "./components/AzarashiSvg";
 
 function App(): JSX.Element {
   return (
     <>
-      <div>Hello World!</div>
+      <AzarashiSvg
+        bodyColor="white"
+        mouseColor="#DCDCDC"
+        cheekColor="#FBBABA"
+        eyeColor="black"
+      />
     </>
   );
 }

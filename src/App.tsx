@@ -23,6 +23,8 @@ function App(): JSX.Element {
   const [mouthColor, setMouthColor] = useState("#DCDCDC");
   type BeardNumber = 2 | 3;
   const [beardNumber, setBeardNumber] = useState<BeardNumber>(2);
+  type HatType = "none" | "normal" | "santa" | "witch";
+  const [hatType, setHatType] = useState<HatType>("none");
   return (
     <>
       <AppBar>
@@ -98,6 +100,36 @@ function App(): JSX.Element {
                   <FormControlLabel value={3} control={<Radio />} label="3" />
                 </RadioGroup>
               </FormControl>
+              <FormControl>
+                <FormLabel>Hat Type</FormLabel>
+                <RadioGroup
+                  value={hatType}
+                  onChange={(e) => {
+                    setHatType(e.target.value as HatType);
+                  }}
+                >
+                  <FormControlLabel
+                    value="none"
+                    control={<Radio />}
+                    label="None"
+                  />
+                  <FormControlLabel
+                    value="normal"
+                    control={<Radio />}
+                    label="Normal"
+                  />
+                  <FormControlLabel
+                    value="santa"
+                    control={<Radio />}
+                    label="Santa"
+                  />
+                  <FormControlLabel
+                    value="witch"
+                    control={<Radio />}
+                    label="Witch"
+                  />
+                </RadioGroup>
+              </FormControl>
             </Stack>
           </Paper>
         </Grid>
@@ -109,6 +141,7 @@ function App(): JSX.Element {
               cheekColor={cheekColor}
               mouseColor={mouthColor}
               beardNumber={beardNumber}
+              hatType={hatType}
             />
           </Paper>
         </Grid>
